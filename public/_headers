@@ -1,8 +1,0 @@
-# Long-lived cache for Vite hashed build output (repeat visits hit disk cache).
-# Keep index.html uncached so SPA updates ship — set that in your host’s SPA rules if needed.
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Root static favicon/asset (rename file to bust cache if you replace it).
-/logo1.png
-  Cache-Control: public, max-age=31536000, immutable

@@ -9,8 +9,9 @@ function NewsletterCTA() {
       aria-labelledby="newsletter-heading"
     >
       <div className="glass-panel relative overflow-hidden rounded-3xl py-12 sm:py-14">
+        {/* Local "carbon-fibre" texture rendered via CSS gradients — no third-party requests. */}
         <div
-          className="pointer-events-none absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"
+          className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-overlay [background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.6)_0_1px,transparent_1px_3px),repeating-linear-gradient(-45deg,rgba(255,255,255,0.5)_0_1px,transparent_1px_3px)] [background-size:6px_6px,6px_6px]"
           aria-hidden
         />
         <div className="relative z-10 mx-auto max-w-2xl px-5 sm:px-6">

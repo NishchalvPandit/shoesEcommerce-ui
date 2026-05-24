@@ -4,9 +4,11 @@ import AppRoutes from './routes/AppRoutes'
 import { CartProvider } from './context/CartContext'
 import './App.css'
 
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBase}>
       <CartProvider>
         <div className="app font-sora antialiased">
           <Navbar />

@@ -32,6 +32,17 @@ function ForgotPassword() {
             </p>
           </div>
 
+          {/* Demo notice — portfolio UI, no email is sent. */}
+          {!submitted && (
+            <div
+              role="note"
+              className="rounded-xl border border-white/10 bg-surface-container px-4 py-3 font-sora text-xs text-on-surface-variant"
+            >
+              <strong className="text-on-surface">Demo UI</strong> — this storefront is a portfolio
+              project. No email is sent and no data is stored.
+            </div>
+          )}
+
           {submitted ? (
             <div className="space-y-6">
               <div className="glass-panel rounded-xl p-6 text-center">
@@ -40,7 +51,7 @@ function ForgotPassword() {
                   className="mb-4 inline-block text-4xl text-accent-blue"
                 />
                 <p className="font-sora text-sm text-on-surface-variant">
-                  If an account exists for that email, you’ll receive instructions shortly.
+                  This is a demo confirmation screen. No real reset email was sent.
                 </p>
               </div>
               <Link to="/login" className={`${CTA_CLASSES} block text-center`}>
@@ -50,6 +61,8 @@ function ForgotPassword() {
           ) : (
             <form
               className="space-y-6"
+              autoComplete="off"
+              data-form-type="other"
               onSubmit={(e) => {
                 e.preventDefault()
                 setSubmitted(true)
@@ -65,9 +78,9 @@ function ForgotPassword() {
                 <input
                   id="forgot-email"
                   type="email"
-                  autoComplete="email"
+                  autoComplete="off"
                   required
-                  placeholder="nishchalpandit@gmail.com"
+                  placeholder="you@example.com"
                   className="w-full border-none bg-transparent px-4 pb-3 pt-7 font-sora text-base text-on-surface outline-none ring-0 placeholder:text-surface-variant focus:ring-0"
                 />
               </div>
