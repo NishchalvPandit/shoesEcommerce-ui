@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* Design tokens (from prototype) — Anton display / Sora UI */
+@theme {
+  --font-family-anton: "Anton", ui-sans-serif, system-ui, sans-serif;
+  --font-family-sora: "Sora", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #131313;
+  --color-surface: #131313;
+  --color-surface-container: #1f1f1f;
+  --color-surface-container-low: #1b1b1b;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-bright: #393939;
+  --color-on-surface: #e2e2e2;
+  --color-on-surface-variant: #cfc4c5;
+  --color-on-tertiary-container: #757575;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-variant: #353535;
+  --color-accent-blue: #00e0ff;
+
+  --spacing-gutter: 24px;
+  --spacing-margin-desktop: 64px;
+  --spacing-container-max: 1440px;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.glass-panel {
+  background: rgba(19, 19, 19, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.premium-shadow {
+  box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.6);
+}
+
+.sneaker-spotlight {
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+}
+
+.product-gradient {
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.custom-scrollbar::-webkit-scrollbar { height: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #131313; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #c6c6c6; border-radius: 2px; }
+
+.input-gradient-focus:focus-within {
+  box-shadow: 0 0 0 1px #c6c6c6;
+}
+
+.break-grid-img {
+  transform: translateY(-20px) scale(1.1);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.product-card-lifestyle:hover .break-grid-img {
+  transform: translateY(-35px) scale(1.15) rotate(-3deg);
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sora);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+}
