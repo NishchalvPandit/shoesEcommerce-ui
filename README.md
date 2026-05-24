@@ -1,3 +1,7 @@
+
+https://shoesecommerce-ui.netlify.app/
+
+
 # Kinetic Shoes
 
 React storefront UI built with Vite, Tailwind CSS v4, and React Router. Dark theme, Anton + Sora typography, neon accent styling.
