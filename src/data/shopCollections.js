@@ -6,7 +6,7 @@ export const SHOP_COLLECTION_MAP = {
   performance: {
     hash: 'performance',
     scrollTarget: 'performance',
-    categories: ['Performance'],
+    categories: [],
     title: 'Elite Performance',
   },
   lifestyle: {

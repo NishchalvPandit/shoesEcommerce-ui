@@ -1,6 +1,5 @@
 import MaterialSymbol from '../MaterialSymbol/MaterialSymbol'
 import PriceRangeFilter from '../PriceRangeFilter/PriceRangeFilter'
-import { SHOP_CATEGORIES } from '../../data/shopProducts'
 
 function FilterHeading({ children }) {
   return (
@@ -15,8 +14,6 @@ function FilterHeading({ children }) {
  * Controlled by parent state so filters stay in sync with the product grid.
  */
 function SidebarFilter({
-  selectedCategories,
-  onCategoryToggle,
   priceMin,
   priceMax,
   onPriceMinChange,
@@ -40,32 +37,6 @@ function SidebarFilter({
           Clear Filters
         </button>
       )}
-
-      <section>
-        <FilterHeading>Category</FilterHeading>
-        <div className="space-y-3">
-          {SHOP_CATEGORIES.map((label) => {
-            const checked = selectedCategories.includes(label)
-
-            return (
-              <label key={label} className="group flex cursor-pointer items-center gap-3">
-                <input
-                  type="checkbox"
-                  checked={checked}
-                  onChange={() => onCategoryToggle(label)}
-                  className={
-                    'h-5 w-5 rounded border border-white/20 bg-transparent text-accent-blue ' +
-                    'focus:ring-2 focus:ring-accent-blue focus:ring-offset-0 focus:ring-offset-background'
-                  }
-                />
-                <span className="font-sora text-base text-on-surface transition-colors group-hover:text-accent-blue">
-                  {label}
-                </span>
-              </label>
-            )
-          })}
-        </div>
-      </section>
 
       <PriceRangeFilter
         priceMin={priceMin}

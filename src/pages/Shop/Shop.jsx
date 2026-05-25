@@ -50,18 +50,6 @@ function Shop() {
     setFilters((prev) => ({ ...prev, sort: e.target.value }))
   }
 
-  const handleCategoryToggle = useCallback((category) => {
-    setFilters((prev) => {
-      const exists = prev.categories.includes(category)
-      return {
-        ...prev,
-        categories: exists
-          ? prev.categories.filter((c) => c !== category)
-          : [...prev.categories, category],
-      }
-    })
-  }, [])
-
   const handlePriceMinChange = useCallback((value) => {
     setFilters((prev) => ({
       ...prev,
@@ -151,8 +139,6 @@ function Shop() {
 
         <div className="flex flex-col gap-10 md:grid md:grid-cols-12 md:gap-6 lg:gap-8">
           <SidebarFilter
-            selectedCategories={filters.categories}
-            onCategoryToggle={handleCategoryToggle}
             priceMin={filters.priceMin}
             priceMax={filters.priceMax}
             onPriceMinChange={handlePriceMinChange}
